@@ -1,27 +1,138 @@
+.main_container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .navbar {
-	width: 100%;
-	height: 70px;
-	background-color: #3bb19b;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  background-color: rgb(232, 162, 174);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .navbar h1 {
-	color: white;
-	font-size: 25px;
-	margin-left: 20px;
+  color: white;
+  font-size: 25px;
+  margin-left: 20px;
 }
 
 .white_btn {
-	border: none;
-	outline: none;
-	padding: 12px 0;
-	background-color: white;
-	border-radius: 20px;
-	width: 120px;
-	font-weight: bold;
-	font-size: 14px;
-	cursor: pointer;
-	margin-right: 20px;
+  border: none;
+  outline: none;
+  padding: 12px 0;
+  background-color: white;
+  color: rgb(232, 162, 174);
+  border-radius: 20px;
+  width: 120px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.center {
+  position: relative;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 70px);
+  background: white;
+  animation-name: backdiv;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+/* ... (keep all your existing styles the same until .heart_container) */
+
+.heart_container {
+  position: relative;
+  width: 100px;  /* Double from 50px */
+  height: 100px; /* Double from 50px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart {
+  position: absolute;
+  background-color: pink;
+  height: 100px; /* Double from 50px */
+  width: 100px;  /* Double from 50px */
+  transform: rotate(-45deg);
+  animation-name: beat;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.heart:after {
+  background-color: pink;
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  width: 100px;  /* Double from 50px */
+  height: 100px; /* Double from 50px */
+  top: 0px;
+  left: 50px;    /* Double from 25px */
+}
+
+.heart:before {
+  background-color: pink;
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  width: 100px;  /* Double from 50px */
+  height: 100px; /* Double from 50px */
+  top: -50px;    /* Double from -25px */
+  left: 0px;
+}
+
+/* Keep all other styles the same */
+
+.gallery_btn {
+  position: absolute;
+  border: none;
+  outline: none;
+  padding: 12px 0;
+  border-radius: 20px;
+  background-color: transparent;
+  width: 120px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2;
+  transform: translateY(-15px);
+}
+
+.gallery_btn a {
+  text-decoration: none;
+  color: rgb(232, 162, 174) ;
+}
+
+@keyframes backdiv {
+  50% {
+    background: #ffe6f2;
+  }
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    transform: scale(0.6) rotate(-45deg);
+  }
 }

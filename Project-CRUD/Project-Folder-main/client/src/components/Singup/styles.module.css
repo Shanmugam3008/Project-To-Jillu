@@ -6,7 +6,9 @@
 	align-items: center;
 	justify-content: center;
 }
-
+.headmain{
+	color: rgb(232, 162, 174);
+}
 .signup_form_container {
 	width: 900px;
 	height: 500px;
@@ -22,7 +24,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: #3bb19b;
+	background-color: rgb(232, 162, 174);
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
@@ -92,7 +94,12 @@
 }
 
 .green_btn {
-	background-color: #3bb19b;
+	background-color: rgb(232, 162, 174);
 	color: white;
 	margin: 10px;
 }
+
+.white_btn{
+	color: rgb(232, 162, 174);
+}
+
