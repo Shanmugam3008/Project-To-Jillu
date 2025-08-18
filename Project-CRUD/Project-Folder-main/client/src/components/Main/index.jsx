@@ -12,7 +12,7 @@ const Main = () => {
         <h1>JILLU</h1>
         <div>
           <button className={styles.white_btn}>
-          <a href={"/Gallery"}>Hello</a>
+          <a href={"/Gallery"}>Hit Me Again</a>
           </button>
           <button className={styles.white_btn} onClick={handleLogout}>
           Logout

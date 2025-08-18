@@ -1,76 +1,118 @@
-/* Add these to your existing styles */
-.main_container {
-  position: relative;
-  width: 100%;
-}
-
-.navbar {
-  width: 100%;
-  height: 70px;
-  background-color: rgb(232, 162, 174);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.navbar h1 {
-  color: white;
-  font-size: 25px;
-  margin-left: 20px;
-}
- a{
-    text-decoration: none;
-    color: rgb(232, 162, 174);
-  }
-
-.white_btn {
-  border: none;
-  outline: none;
-  padding: 12px 0;
-  background-color: white;
-  color: rgb(232, 162, 174);
-  border-radius: 20px;
-  width: 120px;
-  font-weight: bold;
-  font-size: 14px;
-  cursor: pointer;
-  margin-right: 20px;
-
-}
-
 .gallery_container {
   width: 100%;
-
+  min-height: 100vh;
   background-color: #f5f5f5;
 }
 
-.gallery_content {
-  padding: 2rem;
-  max-width: 1200px;
-    min-height: calc(100vh - 140px);
-  margin: 0 auto;
+.navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  background-color: rgb(232, 162, 174);
+  color: white;
+  z-index: 1;
+}
+
+.white_btn {
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.white_btn a {
+  color: rgb(232, 162, 174);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.gallery_content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
 .image_item {
-    width: 50%;
-    height: 50%;
-    text-align: center;
-    font-size: xx-large;
-    font-weight: bolder;
-    color: rgb(232, 162, 174);
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  aspect-ratio: 4/3;
+  transition: transform 0.3s ease;
 }
 
-/* .image_item {
-  height: 200px;
-  background-color: #ddd;
+.image_item:hover {
+  transform: scale(1.03);
+}
+
+.gallery_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image_overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.image_item:hover .image_overlay {
+  transform: translateY(0);
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
-  align-items: center;
   justify-content: center;
-  border-radius: 8px;
-} */
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal_content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.enlarged_image {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+  margin: 0 auto;
+}
+
+.image_caption {
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.close_button {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
