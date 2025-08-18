@@ -3,6 +3,7 @@ import Main from "./components/Main";
 import Signup from "./components/Singup";
 import Login from "./components/Login";
 import Hello from './components/Hello';
+import Gallery from './components/Gallery';
 
 function App() {
 	const user = localStorage.getItem("token");
@@ -13,7 +14,8 @@ function App() {
 			<Route path="/signup" exact element={<Signup />} />
 			<Route path="/login" exact element={<Login />} />
 			<Route path="/" element={<Navigate replace to="/login" />} />
-			 <Route path="/Hello" element={<Hello />} />
+			<Route path="/Hello" element={<Hello />} />
+			<Route path="/Gallery" element={<Gallery />} />
 		</Routes>
 	);
 }

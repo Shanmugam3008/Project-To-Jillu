@@ -10,9 +10,14 @@ const Main = () => {
     <div className={styles.main_container}>
       <nav className={styles.navbar}>
         <h1>JILLU</h1>
-        <button className={styles.white_btn} onClick={handleLogout}>
+        <div>
+          <button className={styles.white_btn}>
+          <a href={"/Gallery"}>Hello</a>
+          </button>
+          <button className={styles.white_btn} onClick={handleLogout}>
           Logout
-        </button>
+          </button>
+        </div>
       </nav>
       <div className={styles.center}>
         <div className={styles.back}></div>
