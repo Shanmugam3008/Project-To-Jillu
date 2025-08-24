@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 
-.white_btn a {
+.white_btn  {
   color: rgb(232, 162, 174);
   text-decoration: none;
   font-weight: bold;

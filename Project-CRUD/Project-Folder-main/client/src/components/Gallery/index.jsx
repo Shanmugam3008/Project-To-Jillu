@@ -35,9 +35,7 @@ const Gallery = () => {
     <div className={styles.gallery_container}>
       <nav className={styles.navbar}>
         <h1>JILLU</h1>
-        <button className={styles.white_btn}>
-          <a href="/">Back</a>
-        </button>
+        <a href="/"><button className={styles.white_btn}>Back</button></a>
       </nav>
       
       <div className={styles.gallery_content}>
