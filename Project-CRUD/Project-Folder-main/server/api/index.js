@@ -39,17 +39,15 @@
 // module.exports = app;
 
 
+// Project-CRUD/Project-Folder-main/server/api/index.js
 const jsonServer = require("json-server");
-const path = require("path");
 
 const server = jsonServer.create();
-const router = jsonServer.router(path.join(__dirname, "../db.json"));
+const router = jsonServer.router("Project-CRUD/Project-Folder-main/server/db.json"); 
 const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
 server.use(router);
 
-// Export Vercel handler
-module.exports = (req, res) => {
-  server(req, res);
-};
+// Export as Vercel handler
+module.exports = server;
