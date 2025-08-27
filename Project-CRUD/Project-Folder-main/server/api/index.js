@@ -5,29 +5,35 @@ const jsonServer = require("json-server");
 
 const app = express();
 
-// Middlewares
+// Middleware
 app.use(express.json());
 app.use(cors());
 
+// Root route
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
 });
 
-// JSON Server setup (db.json as your DB)
-const router = jsonServer.router("db.json");
+// Setup JSON server (read-only in production)
+const router = jsonServer.router("api/db.json"); // path corrected
 const middlewares = jsonServer.defaults();
-
-// Expose raw json-server routes under /api/db
 app.use("/api/db", middlewares, router);
 
-// Import custom routes and inject db.json instance
-const userRoutes = require("./routes/users")(router.db);  
+// Import custom routes
+const userRoutes = require("./routes/users")(router.db);
 const authRoutes = require("./routes/auth")(router.db);
 
-// Custom routes use db.json as storage
+// Custom routes
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 
-// Start server
+const isProduction = process.env.NODE_ENV === "production";
 const port = process.env.PORT || 8080;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+
+// Local dev only
+if (!isProduction) {
+  app.listen(port, () => console.log(`Listening on port ${port}...`));
+}
+
+// Export for Vercel
+module.exports = app;
