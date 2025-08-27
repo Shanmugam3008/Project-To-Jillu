@@ -11,9 +11,9 @@ const Main = () => {
       <nav className={styles.navbar}>
         <h1>JILLU</h1>
         <div>
-          
-          <a href={"/Gallery"}><button className={styles.white_btn}>Hit Me Again</button></a>
-          
+          <button className={styles.white_btn}>
+          <a href={"/Gallery"}>Hello</a>
+          </button>
           <button className={styles.white_btn} onClick={handleLogout}>
           Logout
           </button>
