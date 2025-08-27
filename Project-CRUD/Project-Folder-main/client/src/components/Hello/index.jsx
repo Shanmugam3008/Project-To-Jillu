@@ -9,7 +9,7 @@ const Carreer = () => {
         <a href={"/"}><button className={styles.white_btn}>Back</button></a>
       </nav>
       <div className={styles.gallery_content}>
-        <div className={styles.image_item}>Hey You Focus On Carreer</div>
+        <div className={styles.image_item}>Focus on your path, and trust that time will softly guide us where we’re meant to be. </div>
 
       </div>
     </div>
