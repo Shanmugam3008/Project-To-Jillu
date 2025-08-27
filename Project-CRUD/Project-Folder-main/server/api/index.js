@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("Welcome to my API! Use /api/users or /api/auth");
+  res.send("Backend is running 🚀");
 });
 
 // JSON Server setup (db.json as your DB)
